@@ -16,6 +16,7 @@ class Root extends Sprite {
 
     public static var assets:AssetManager;
     public var dot:Image;
+    public var floor1:Image;
     
     
   	
@@ -30,6 +31,7 @@ class Root extends Sprite {
         assets = new AssetManager();
 	
 		assets.enqueue("assets/dot.png");
+		assets.enqueue("assets/floor1.png");
 		
         assets.loadQueue(function onProgress(ratio:Int) {
 		
@@ -43,6 +45,8 @@ class Root extends Sprite {
                         startup.removeChild(startup.loadingBitmap);
                         
                     
+                    	floor1 = new Image(Root.assets.getTexture("floor1"));
+                    	addChild(floor1);
 						
                        
                         	dot = new Image(Root.assets.getTexture("dot"));
