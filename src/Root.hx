@@ -17,6 +17,7 @@ class Root extends Sprite {
     public static var assets:AssetManager;
     public var dot:Image;
     public var floor1:Image;
+    public var walls:Image;
     
     
   	
@@ -32,6 +33,7 @@ class Root extends Sprite {
 	
 		assets.enqueue("assets/dot.png");
 		assets.enqueue("assets/floor1.png");
+		assets.enqueue("assets/walls.png");
 		
         assets.loadQueue(function onProgress(ratio:Int) {
 		
@@ -47,30 +49,49 @@ class Root extends Sprite {
                     
                     	floor1 = new Image(Root.assets.getTexture("floor1"));
                     	addChild(floor1);
+                    	
+                    	
+                    	
+                    	walls = new Image(Root.assets.getTexture("walls"));
+                    	addChild(walls);
 						
                        
                         	dot = new Image(Root.assets.getTexture("dot"));
                        	 	addChild(dot);
-                        	dot.x = 100;
+                        	dot.x = 500;
                         	dot.y = 0;
-                       
+                        	
+                      
                         
                         Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, 
                         	function(event:KeyboardEvent){
+                        	if(dot == walls){
+                        			dot.x = 0;
+                        			
+                        				}
                         		if(event.keyCode == Keyboard.LEFT){
                         			dot.x -= 10;
                         			}
                         		
                         		if(event.keyCode == Keyboard.RIGHT){
                         			dot.x += 10;
+                        			
                         			}
                         		if(event.keyCode == Keyboard.UP){
                         			dot.y -= 10;
                         		}if(event.keyCode == Keyboard.DOWN){
                         			dot.y += 10;
                         		}
+                        		
                         	});
-                        	
+                        	walls.addEventListener(TouchEvent.TOUCH, 
+                        	function(e:TouchEvent){
+                        		var touch = e.getTouch(stage, TouchPhase.BEGAN);
+                        		
+                        		trace("NINJA TOUCHED");
+                        		
+                        		
+                        	});
                         
 
                         Starling.juggler.tween(dot, 1.0, {
