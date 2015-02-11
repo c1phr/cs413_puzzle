@@ -68,10 +68,10 @@ class Root extends Sprite {
                         	
                         	
                         	
-                      dark = new Image(Root.assets.getTexture("dark"));
-                        	addChild(dark);
-                        	dark.y=0;
-                        	dark.x=0;
+                    //  dark = new Image(Root.assets.getTexture("dark"));
+                        //	addChild(dark);
+                        //	dark.y=-375;
+                        //	dark.x=-720;
                        
                         Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, 
                         	function(event:KeyboardEvent){
@@ -96,12 +96,16 @@ class Root extends Sprite {
                         		}
                         		if(dot.x == walls.y+590){
                         			dot.x = dot.x-10;
+                        		//	dark.x = dark.x-10;
                         		}if(dot.x == walls.y-20){
                         			dot.x = dot.x+10;
+                        			//dark.x = dark.x+10;
                         		}if(dot.y == walls.x-10){
                         			dot.y = dot.y+10;
+                        			//dark.y = dark.y+10;
                         		}if(dot.y == walls.y+320){
                         			dot.y = dot.y -10;
+                        			//dark.y = dark.y-10;
                         		}
                         	
                         		
