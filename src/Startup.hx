@@ -32,6 +32,7 @@ class Startup extends Sprite {
                     loadingBitmap.height = flash.Lib.current.stage.stageHeight;
                 }});
 
+        Starling.handleLostContext = true;
 		var mStarling = new Starling(Root, flash.Lib.current.stage);
 		mStarling.antiAliasing = 0;
 		function onRootCreated(event:Dynamic, root:Root) {
