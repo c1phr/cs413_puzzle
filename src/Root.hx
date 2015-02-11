@@ -9,6 +9,8 @@ import starling.events.KeyboardEvent;
 import flash.ui.Keyboard;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
+import starling.utils.RectangleUtil;
+
 
 class Root extends Sprite {
 
@@ -18,22 +20,25 @@ class Root extends Sprite {
     public var dot:Image;
     public var floor1:Image;
     public var walls:Image;
+    public var dark:Image; 
     
     
-  	
-
     public function new() {
         super();
     }
 
     public function start(startup:Startup) {
     
-
+		
+		
+		
+		
         assets = new AssetManager();
 	
 		assets.enqueue("assets/dot.png");
 		assets.enqueue("assets/floor1.png");
 		assets.enqueue("assets/walls.png");
+		assets.enqueue("assets/dark.png");
 		
         assets.loadQueue(function onProgress(ratio:Int) {
 		
@@ -58,47 +63,57 @@ class Root extends Sprite {
                        
                         	dot = new Image(Root.assets.getTexture("dot"));
                        	 	addChild(dot);
-                        	dot.x = 500;
-                        	dot.y = 0;
+                        	dot.x = 300;
+                        	dot.y = 200;
                         	
-                      
-                        
+                        	
+                        	
+                      dark = new Image(Root.assets.getTexture("dark"));
+                        	addChild(dark);
+                        	dark.y=0;
+                        	dark.x=0;
+                       
                         Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, 
                         	function(event:KeyboardEvent){
-                        	if(dot == walls){
-                        			dot.x = 0;
-                        			
-                        				}
+                        		
+                        	
                         		if(event.keyCode == Keyboard.LEFT){
+                        		
                         			dot.x -= 10;
-                        			}
+                        			dark.x -=10;
+                        		}
                         		
                         		if(event.keyCode == Keyboard.RIGHT){
                         			dot.x += 10;
-                        			
+                        			dark.x +=10;
                         			}
                         		if(event.keyCode == Keyboard.UP){
                         			dot.y -= 10;
+                        			dark.y -=10;
                         		}if(event.keyCode == Keyboard.DOWN){
                         			dot.y += 10;
+                        			dark.y +=10;
                         		}
+                        		if(dot.x == walls.y+590){
+                        			dot.x = dot.x-10;
+                        		}if(dot.x == walls.y-20){
+                        			dot.x = dot.x+10;
+                        		}if(dot.y == walls.x-10){
+                        			dot.y = dot.y+10;
+                        		}if(dot.y == walls.y+320){
+                        			dot.y = dot.y -10;
+                        		}
+                        	
+                        		
                         		
                         	});
-                        	walls.addEventListener(TouchEvent.TOUCH, 
+                        	
+                        	dot.addEventListener(TouchEvent.TOUCH, 
                         	function(e:TouchEvent){
                         		var touch = e.getTouch(stage, TouchPhase.BEGAN);
-                        		
-                        		trace("NINJA TOUCHED");
-                        		
-                        		
-                        	});
+                        	}); 
                         
 
-                        Starling.juggler.tween(dot, 1.0, {
-                            transition: Transitions.EASE_OUT_BOUNCE,
-                                delay: 2.0,
-                                y: 250
-                                });
 
                     }
 
