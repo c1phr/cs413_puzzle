@@ -17,6 +17,8 @@ class Game extends Sprite
     public var walls:Image;
     public var dark:Image;
     public var wallsArray:List<Image>;
+    public var key1:Image;
+    public var note1:Image;
     
 	public function new(rootSprite)
 	{
@@ -35,17 +37,25 @@ class Game extends Sprite
 
                 addWalls();
                
-            	dot = new Image(Root.assets.getTexture("dot2"));
+            	dot = new Image(Root.assets.getTexture("dot"));
            	 	addChild(dot);
             	dot.x = 1280/2;
             	dot.y = 720/2;
+
+                key1 = new Image(Root.assets.getTexture("key"));
+                addChild(key1);
+                key1.x = 500;
+                key1.y = 300;
+
+                note1 = new Image(Root.assets.getTexture("Notethumbnail"));
+                addChild(note1);
+                note1.x = 800;
+                note1.y = 600;
                 	
-                	
-                	
-            //  dark = new Image(Root.assets.getTexture("dark"));
-                //	addChild(dark);
-                //	dark.y=-375;
-                //	dark.x=-720;
+                dark = new Image(Root.assets.getTexture("dark"));
+                	addChild(dark);
+                	dark.y=0;
+                	dark.x=0;
                
                 Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, 
                 	function(event:KeyboardEvent){

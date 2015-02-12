@@ -21,7 +21,7 @@ class Root extends Sprite {
     public function start(startup:Startup) {
         assets = new AssetManager();
 	
-		assets.enqueue("assets/dot2.png");
+		assets.enqueue("assets/dot.png");
 		assets.enqueue("assets/floor2.png");
 		assets.enqueue("assets/walls.png");
 		assets.enqueue("assets/dark.png");
@@ -32,6 +32,8 @@ class Root extends Sprite {
         assets.enqueue("assets/wall1.png");
         assets.enqueue("assets/title_font.png");
         assets.enqueue("assets/title_font.fnt");
+        assets.enqueue("assets/key.png");
+        assets.enqueue("assets/Notethumbnail.png");
 		
         assets.loadQueue(function onProgress(ratio:Int) {
 		
