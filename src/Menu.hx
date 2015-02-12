@@ -57,7 +57,8 @@ class Menu extends Sprite {
 		var touch:Touch = event.getTouch(this, TouchPhase.ENDED);
 		if (touch != null)
 		{
-			trace("Open Credits");
+			var creditsScreen = new Credits();
+			addChild(creditsScreen);
 		}
 	}
 }
