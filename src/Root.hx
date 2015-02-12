@@ -80,19 +80,19 @@ class Root extends Sprite {
                         		if(event.keyCode == Keyboard.LEFT){
                         		
                         			dot.x -= 10;
-                        			dark.x -=10;
+                        			//dark.x -=10;
                         		}
                         		
                         		if(event.keyCode == Keyboard.RIGHT){
                         			dot.x += 10;
-                        			dark.x +=10;
+                        			//dark.x +=10;
                         			}
                         		if(event.keyCode == Keyboard.UP){
                         			dot.y -= 10;
-                        			dark.y -=10;
+                        			//dark.y -=10;
                         		}if(event.keyCode == Keyboard.DOWN){
                         			dot.y += 10;
-                        			dark.y +=10;
+                        			//dark.y +=10;
                         		}
                         		if(dot.x == walls.y+590){
                         			dot.x = dot.x-10;
