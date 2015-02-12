@@ -50,13 +50,13 @@ class Credits extends Sprite {
 		addChild(brianSaganey);
 
 
-		var creditsButton = new TextField(400, 100, "Back", "title_font", 72, Color.WHITE);
-		creditsButton.x = Std.int(stage.stageWidth/2) - 200;
-		creditsButton.y = 600;
-		creditsButton.border = true;
-		creditsButton.addEventListener(TouchEvent.TOUCH, backToMenu);
+		var backButton = new TextField(400, 100, "Back", "title_font", 72, Color.WHITE);
+		backButton.x = Std.int(stage.stageWidth/2) - 200;
+		backButton.y = 600;
+		backButton.border = true;
+		backButton.addEventListener(TouchEvent.TOUCH, backToMenu);
 
-		addChild(creditsButton);
+		addChild(backButton);
 
 
 	}
