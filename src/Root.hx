@@ -82,6 +82,7 @@ class Root extends Sprite {
                         	function(event:KeyboardEvent){
                         		
                         	
+                            // Movement and collision detection
                         		if(event.keyCode == Keyboard.LEFT){
                                     dot.x -= 10;
                                     //dark.x -=10;
@@ -152,13 +153,13 @@ class Root extends Sprite {
         });
     }
 
+    // simple collision detection function
     private function checkCollision(texture1:Image, texture2:Image):Bool {
         return (texture1.bounds.intersects(texture2.bounds));
     }
 
+    // defining bounds of the game area
     private function addWalls(){
-        var walls = new List<Image>();
-
         wallsArray = new List<Image>();
         eastWall = new Image(Root.assets.getTexture("eastWall"));
         addChild(eastWall);
@@ -178,14 +179,7 @@ class Root extends Sprite {
         southWall.y = 704;
         wallsArray.add(southWall);
 
-        var tempWall = new Image(Root.assets.getTexture("wall1"));
-        walls.add(tempWall);
-        for(wall in walls){
-            addChild(wall);
-            wall.x = 256;
-            wall.y = 16;
-            wallsArray.add(wall);
-        }
+
     }
 
 }
