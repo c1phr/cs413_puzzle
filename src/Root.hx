@@ -30,15 +30,18 @@ class Root extends Sprite {
         assets.enqueue("assets/northWall.png");
         assets.enqueue("assets/southWall.png");
         assets.enqueue("assets/wall1.png");
-        
+        assets.enqueue("assets/title_font.png");
+        assets.enqueue("assets/title_font.fnt");
 		
         assets.loadQueue(function onProgress(ratio:Int) {
 		
             if (ratio == 1) {
                 startup.removeChild(startup.loadingBitmap);
-	            var game = new Game(this);
-                game.startGame();
-                this.addChild(game);
+	            // var game = new Game(this);
+             //    game.startGame();
+             //    this.addChild(game);
+             var menu = new Menu(this);             
+             this.addChild(menu);             
             }
 
         });
