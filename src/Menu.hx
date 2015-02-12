@@ -28,9 +28,17 @@ class Menu extends Sprite {
 
 		addChild(startGameButton);
 
+		var tutorialButton = new TextField(400, 100, "Tutorial", "title_font", 72, Color.WHITE);
+		tutorialButton.x = Std.int(stage.stageWidth/2) - 200;
+		tutorialButton.y = 400;
+		tutorialButton.border = true;
+		tutorialButton.addEventListener(TouchEvent.TOUCH, openTutorial);
+
+		addChild(tutorialButton);
+
 		var creditsButton = new TextField(400, 100, "Credits", "title_font", 72, Color.WHITE);
 		creditsButton.x = Std.int(stage.stageWidth/2) - 200;
-		creditsButton.y = 400;
+		creditsButton.y = 600;
 		creditsButton.border = true;
 		creditsButton.addEventListener(TouchEvent.TOUCH, openCredits);
 
@@ -59,6 +67,16 @@ class Menu extends Sprite {
 		{
 			var creditsScreen = new Credits();
 			addChild(creditsScreen);
+		}
+	}
+
+	public function openTutorial(event:TouchEvent)
+	{
+		var touch:Touch = event.getTouch(this, TouchPhase.ENDED);
+		if (touch != null)
+		{
+			var tutorialScreen = new Tutorial();
+			addChild(tutorialScreen);
 		}
 	}
 }
