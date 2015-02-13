@@ -323,14 +323,14 @@ class Game extends Sprite
                                 }
                                 if(checkCollision(dot, key1))
                                 {
-                                    dot.x += 10;
 <<<<<<< HEAD
+                                    dot.x += 10;
                                     //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
 
 =======
-                                    moveDarkness(10, 0);                                    
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
+                                    moveDarkness(10, 0);   
+>>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50                                 
                                 }
                                 if(checkCollision(dot, note1))
                                 {
