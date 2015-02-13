@@ -42,7 +42,7 @@ class Game extends Sprite
             	dot.x = 1280/2;
             	dot.y = 720/2;
 
-                key1 = new Image(Root.assets.getTexture("key"));
+                key1 = new Image(Root.assets.getTexture("key_green")
                 addChild(key1);
                 key1.x = 500;
                 key1.y = 300;
@@ -71,6 +71,16 @@ class Game extends Sprite
                                     dot.x += 10;
                                     //dark.x +=10;
                                 }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
                             }
                 		}
                 		if(event.keyCode == Keyboard.RIGHT){
@@ -83,6 +93,16 @@ class Game extends Sprite
                                     dot.x -= 10;
                                     //dark.x -=10;
                                 }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
                             }
                 		}
                 		if(event.keyCode == Keyboard.UP){
@@ -93,6 +113,16 @@ class Game extends Sprite
                                 {
                                     dot.y += 10;
                                     //dark.y +=10;
+                                }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
                                 }
                             }
                             
@@ -106,6 +136,16 @@ class Game extends Sprite
                                 {
                                     dot.y -= 10;
                                     //dark.y -=10;
+                                }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
                                 }
                             }
                 		}
