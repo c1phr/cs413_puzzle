@@ -35,6 +35,12 @@ class EndGame extends Sprite {
 		{
 			endText = "You begin to read the note but feel the air grow cold around you, you hear a creak and begin falling...";
 		}
+		else if (loseType == "win")
+		{
+			endText = "The button on the wall begins glowing ominously as you approach, you press it and the walls begin to fall away...\n\n"
+			+
+			"... it was all just a game.";
+		}
 		else
 		{
 			endText = "";

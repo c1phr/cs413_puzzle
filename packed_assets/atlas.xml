@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:a53525451c42f5e9bbb2d492607f7d94:75b94f5cf2b932b334c6f421d8f22685:334b4327c5e7c05b7f9fce8d56675d90$ -->
+<!-- $TexturePacker:SmartUpdate:3f7f18a6276874e9e79de1c424545ff6:707e66887fe0f7dcaf72f38628ba71c0:334b4327c5e7c05b7f9fce8d56675d90$ -->
 <TextureAtlas imagePath="textures.png">
-    <SubTexture name="Notethumbnail" x="428" y="38" width="100" height="100"/>
-    <SubTexture name="dark" x="2" y="1122" width="1280" height="720"/>
-    <SubTexture name="dot" x="34" y="38" width="30" height="21"/>
-    <SubTexture name="dot2" x="2" y="38" width="30" height="21"/>
-    <SubTexture name="eastWall" x="1302" y="1122" width="16" height="720"/>
-    <SubTexture name="floor1" x="1244" y="38" width="640" height="360"/>
-    <SubTexture name="floor2" x="516" y="400" width="1280" height="720"/>
-    <SubTexture name="key" x="326" y="38" width="100" height="100"/>
-    <SubTexture name="key_blue" x="12" y="2" width="8" height="13"/>
-    <SubTexture name="key_green" x="22" y="2" width="8" height="13"/>
-    <SubTexture name="key_red" x="2" y="2" width="8" height="13"/>
-    <SubTexture name="northWall" x="146" y="2" width="1280" height="16"/>
-    <SubTexture name="southWall" x="2" y="20" width="1280" height="16"/>
-    <SubTexture name="title_font" x="2" y="400" width="512" height="512"/>
-    <SubTexture name="wall1" x="548" y="38" width="16" height="272"/>
-    <SubTexture name="wall10" x="530" y="38" width="16" height="230"/>
-    <SubTexture name="wall12" x="308" y="38" width="16" height="42"/>
-    <SubTexture name="wall14" x="566" y="38" width="16" height="320"/>
-    <SubTexture name="wall2" x="1284" y="20" width="272" height="16"/>
-    <SubTexture name="wall3" x="32" y="2" width="112" height="16"/>
-    <SubTexture name="wall4" x="584" y="38" width="16" height="336"/>
-    <SubTexture name="wall5" x="1428" y="2" width="256" height="16"/>
-    <SubTexture name="wall6" x="1722" y="20" width="240" height="16"/>
+    <SubTexture name="Notethumbnail" x="1786" y="20" width="25" height="25"/>
+    <SubTexture name="door_closed" x="262" y="47" width="50" height="50"/>
+    <SubTexture name="door_open" x="314" y="47" width="50" height="50"/>
+    <SubTexture name="dot" x="1722" y="20" width="30" height="21"/>
+    <SubTexture name="dot2" x="1754" y="20" width="30" height="21"/>
+    <SubTexture name="eastWall" x="1798" y="409" width="16" height="720"/>
+    <SubTexture name="floor1" x="592" y="47" width="640" height="360"/>
+    <SubTexture name="floor2" x="516" y="409" width="1280" height="720"/>
+    <SubTexture name="key" x="418" y="47" width="100" height="100"/>
+    <SubTexture name="key_blue" x="22" y="2" width="8" height="13"/>
+    <SubTexture name="key_green" x="2" y="2" width="8" height="13"/>
+    <SubTexture name="key_red" x="12" y="2" width="8" height="13"/>
+    <SubTexture name="lights" x="366" y="47" width="50" height="50"/>
+    <SubTexture name="northWall" x="276" y="20" width="1280" height="16"/>
+    <SubTexture name="southWall" x="274" y="2" width="1280" height="16"/>
+    <SubTexture name="title_font" x="2" y="409" width="512" height="512"/>
+    <SubTexture name="wall1" x="538" y="47" width="16" height="272"/>
+    <SubTexture name="wall10" x="520" y="47" width="16" height="230"/>
+    <SubTexture name="wall12" x="244" y="47" width="16" height="42"/>
+    <SubTexture name="wall14" x="556" y="47" width="16" height="320"/>
+    <SubTexture name="wall2" x="2" y="20" width="272" height="16"/>
+    <SubTexture name="wall3" x="1556" y="2" width="112" height="16"/>
+    <SubTexture name="wall4" x="574" y="47" width="16" height="336"/>
+    <SubTexture name="wall5" x="1670" y="2" width="256" height="16"/>
+    <SubTexture name="wall6" x="32" y="2" width="240" height="16"/>
     <SubTexture name="wall8" x="1576" y="20" width="144" height="16"/>
-    <SubTexture name="wall9" x="66" y="38" width="240" height="32"/>
+    <SubTexture name="wall9" x="2" y="47" width="240" height="32"/>
     <SubTexture name="wallSegment" x="1558" y="20" width="16" height="16"/>
-    <SubTexture name="walls" x="602" y="38" width="640" height="360"/>
-    <SubTexture name="westWall" x="1284" y="1122" width="16" height="720"/>
+    <SubTexture name="walls" x="1234" y="47" width="640" height="360"/>
+    <SubTexture name="westWall" x="1816" y="409" width="16" height="720"/>
 </TextureAtlas>

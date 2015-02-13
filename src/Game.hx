@@ -31,6 +31,7 @@ class Game extends Sprite
     public var door7:Image;
     public var door8:Image;
     public var lights:Image;
+    public var keysGrabbed:Int = 0;
     
 	public function new(rootSprite)
 	{
@@ -62,12 +63,7 @@ class Game extends Sprite
                 note1 = new Image(Root.assets.getTexture("Notethumbnail"));
                 addChild(note1);
                 note1.x = 800;
-                note1.y = 600;
-                	
-                dark = new Image(Root.assets.getTexture("dark"));
-                addChild(dark);
-                dark.y=0;
-                dark.x=0;
+                note1.y = 600;                
                
                 door1 = new Image(Root.assets.getTexture("door_closed"));
                 addChild(door1);
@@ -135,6 +131,11 @@ class Game extends Sprite
                 addChild(lights);
                 lights.x = 640;
                 lights.y = 15;
+
+                dark = new Image(Root.assets.getTexture("dark"));
+                addChild(dark);
+                dark.y=-875;
+                dark.x=-275;
 
                 Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, 
                 	function(event:KeyboardEvent){
@@ -225,6 +226,7 @@ class Game extends Sprite
                         if(key1_distance < 50){
                         	if(event.keyCode == Keyboard.ENTER){
                         		key1.visible = false;
+                                keysGrabbed++;
                         	}
                         }
 
@@ -240,29 +242,33 @@ class Game extends Sprite
                         if(lights_distance < 50){
                         	if(event.keyCode == Keyboard.ENTER){
                         		dark.visible = false;
+                                var endGame = new EndGame(true, "win", rootSprite);
+                                rootSprite.addChild(endGame);
+                                this.removeFromParent();
+                                this.dispose();
                         	}
                         }
 
                 		if(event.keyCode == Keyboard.LEFT){
                             dot.x -= 10;
-                            //dark.x -=10;
+                            dark.x -=10;
                             for(wall in wallsArray)
                             {
 
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
 
                             }
@@ -301,7 +307,7 @@ class Game extends Sprite
                 		}
                 		if(event.keyCode == Keyboard.RIGHT){
                             dot.x += 10;
-                            //dark.x +=10;
+                            dark.x +=10;
                             for(wall in wallsArray)
                             {
 
@@ -310,17 +316,17 @@ class Game extends Sprite
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.x -= 10;
-                                    //dark.x -=10;
+                                    dark.x -=10;
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }	
                                 
                             }
@@ -359,23 +365,23 @@ class Game extends Sprite
                 		}
                 		if(event.keyCode == Keyboard.UP){
                             dot.y -= 10;
-                            //dark.y -=10;
+                            dark.y -=10;
                             for(wall in wallsArray){
 
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y += 10;
-                                    //dark.y +=10;
+                                    dark.y +=10;
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
 
                             }
@@ -415,24 +421,24 @@ class Game extends Sprite
                 		}
                         if(event.keyCode == Keyboard.DOWN){
                             dot.y += 10;
-                            //dark.y +=10;
+                            dark.y +=10;
                             for(wall in wallsArray)
                             {
 
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y -= 10;
-                                    //dark.y -=10;
+                                    dark.y -=10;
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-                                    //dark.x +=10;
+                                    dark.x +=10;
                                 }
                             }
 
@@ -469,11 +475,6 @@ class Game extends Sprite
                             }
 
                 		}
-
-                		
-                	
-                		
-                		
                 	});
                 	
                 	dot.addEventListener(TouchEvent.TOUCH, 
