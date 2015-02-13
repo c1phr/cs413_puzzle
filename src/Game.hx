@@ -314,8 +314,9 @@ class Game extends Sprite
                             Root.assets.playSound("footstep");
                                 if(checkCollision(dot, wall))
                                 {
+                                    dot.x += 10;
                                     Root.assets.playSound("wall_collision");                           
-                                    moveDarkness(10, 0);
+                                    moveDarkness(-10, 0);
                                 }
                                 if(checkCollision(dot, key1))
                                 {
@@ -334,34 +335,42 @@ class Game extends Sprite
 
                             if(checkCollision(dot, door1)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
 
                             if(checkCollision(dot, door2)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
 
                             if(checkCollision(dot, door3)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
 
                             if(checkCollision(dot, door4)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
 
                             if(checkCollision(dot, door5)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
 
                             if(checkCollision(dot, door6)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
 
                             if(checkCollision(dot, door7)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
 
                             if(checkCollision(dot, door8)){
                             	dot.x += 10;
+                                moveDarkness(10, 0);
                             }
                 		}
                 		if(event.keyCode == Keyboard.RIGHT){
@@ -380,49 +389,57 @@ class Game extends Sprite
                                 }
                                 if(checkCollision(dot, key1))
                                 {
-                                    dot.x += 10;
+                                    dot.x -= 10;
                                     Root.assets.playSound("wall_collision");
-                                    moveDarkness(10, 0);
+                                    moveDarkness(-10, 0);
                                 }
                                 if(checkCollision(dot, note1))
                                 {
-                                    dot.x += 10;
-                                    moveDarkness(10, 0);
+                                    dot.x -= 10;
+                                    moveDarkness(-10, 0);
                                     Root.assets.playSound("wall_collision");
                                 }                                
                                 
                             }
 
                             if(checkCollision(dot, door1)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
 
                             if(checkCollision(dot, door2)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
 
                             if(checkCollision(dot, door3)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
 
                             if(checkCollision(dot, door4)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
 
                             if(checkCollision(dot, door5)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
 
                             if(checkCollision(dot, door6)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
 
                             if(checkCollision(dot, door7)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
 
                             if(checkCollision(dot, door8)){
-                            	dot.x += 10;
+                            	dot.x -= 10;
+                                moveDarkness(-10, 0);
                             }
                 		}
                 		if(event.keyCode == Keyboard.UP){
@@ -438,49 +455,57 @@ class Game extends Sprite
                                 }
                                 if(checkCollision(dot, key1))
                                 {
-                                    dot.x += 10;
+                                    dot.y += 10;
                                     Root.assets.playSound("wall_collision");
-                                    moveDarkness(10, 0);
+                                    moveDarkness(0, 10);
                                 }
                                 if(checkCollision(dot, note1))
                                 {
-                                    dot.x += 10;
+                                    dot.y += 10;
                                     Root.assets.playSound("wall_collision");
-                                    moveDarkness(10, 0);
+                                    moveDarkness(0, 10);
                                 }
 
                             }
 
                             if(checkCollision(dot, door1)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
 
                             if(checkCollision(dot, door2)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
 
                             if(checkCollision(dot, door3)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
 
                             if(checkCollision(dot, door4)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
 
                             if(checkCollision(dot, door5)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
 
                             if(checkCollision(dot, door6)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
 
                             if(checkCollision(dot, door7)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
 
                             if(checkCollision(dot, door8)){
-                            	dot.x += 10;
+                            	dot.y += 10;
+                                moveDarkness(0, 10);
                             }
                             
                 		}
@@ -498,48 +523,56 @@ class Game extends Sprite
                                 }
                                 if(checkCollision(dot, key1))
                                 {
-                                    dot.x += 10;
+                                    dot.y -= 10;
                                     Root.assets.playSound("wall_collision");
-                                    moveDarkness(10, 0);
+                                    moveDarkness(0, -10);
                                 }
                                 if(checkCollision(dot, note1))
                                 {
-                                    dot.x += 10;
+                                    dot.y -= 10;
                                     Root.assets.playSound("wall_collision");
-                                    moveDarkness(10, 0);
+                                    moveDarkness(0, -10);
                                 }
                             }
 
                             if(checkCollision(dot, door1)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                             if(checkCollision(dot, door2)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                             if(checkCollision(dot, door3)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                             if(checkCollision(dot, door4)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                             if(checkCollision(dot, door5)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                             if(checkCollision(dot, door6)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                             if(checkCollision(dot, door7)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                             if(checkCollision(dot, door8)){
-                            	dot.x += 10;
+                            	dot.y -= 10;
+                                moveDarkness(0, -10);
                             }
 
                 		}
