@@ -1,3 +1,4 @@
+import Math.sqrt;
 import starling.display.Sprite;
 import starling.utils.AssetManager;
 import starling.display.Image;
@@ -8,6 +9,7 @@ import flash.ui.Keyboard;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
 import starling.utils.RectangleUtil;
+import starling.utils.MathUtil;
 
 class Game extends Sprite
 {
@@ -42,7 +44,7 @@ class Game extends Sprite
             	dot.x = 815;
             	dot.y = 158;
 
-                key1 = new Image(Root.assets.getTexture("key"));
+                key1 = new Image(Root.assets.getTexture("key_green"));
                 addChild(key1);
                 key1.x = 500;
                 key1.y = 300;
@@ -53,24 +55,48 @@ class Game extends Sprite
                 note1.y = 600;
                 	
                 dark = new Image(Root.assets.getTexture("dark"));
-                	addChild(dark);
-                	dark.y=0;
-                	dark.x=0;
+                addChild(dark);
+                dark.y=0;
+                dark.x=0;
                
                 Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, 
                 	function(event:KeyboardEvent){
                 		
+                		var c:Int = Std.int(sqrt((dot.x * dot.x) + (dot.y * dot.y)));
+
+                        var d:Int = Std.int(sqrt((key1.x * key1.x) + (key1.y * key1.y)));
+
+                        var e:Int = d-c;
+                        var f:Int = c-d;
+
+                        if(e < 5 && f > -5){
+                            if(event.keyCode == Keyboard.ENTER){
+                            	key1.visible = false;
+                            }
+                        }
                 	
                 		if(event.keyCode == Keyboard.LEFT){
                             dot.x -= 10;
                             //dark.x -=10;
                             for(wall in wallsArray)
                             {
+
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
                                 }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+
                             }
                 		}
                 		if(event.keyCode == Keyboard.RIGHT){
@@ -78,22 +104,49 @@ class Game extends Sprite
                             //dark.x +=10;
                             for(wall in wallsArray)
                             {
+
+                            	
+
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.x -= 10;
                                     //dark.x -=10;
                                 }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+
+                                
                             }
                 		}
                 		if(event.keyCode == Keyboard.UP){
                             dot.y -= 10;
                             //dark.y -=10;
                             for(wall in wallsArray){
+
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y += 10;
                                     //dark.y +=10;
                                 }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+
                             }
                             
                 		}
@@ -102,10 +155,21 @@ class Game extends Sprite
                             //dark.y +=10;
                             for(wall in wallsArray)
                             {
+
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y -= 10;
                                     //dark.y -=10;
+                                }
+                                if(checkCollision(dot, key1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
+                                }
+                                if(checkCollision(dot, note1))
+                                {
+                                    dot.x += 10;
+                                    //dark.x +=10;
                                 }
                             }
                 		}
