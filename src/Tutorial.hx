@@ -25,7 +25,7 @@ class Tutorial extends Sprite {
 		addChild(title);
 
 		var instructionsText:String = "Find all the keys to escape the room, but watch out for surprises!\n\n"
-		+ "Use the arrow keys to move.\n\n\n\n"
+		+ "Use the arrow keys to move and the Enter key to interact.\n\n\n\n"
 		+ "Good luck...";
 
 		var instructions = new TextField(1200, 600, instructionsText, "title_font", 42, Color.WHITE);

@@ -24,6 +24,9 @@ class Root extends Sprite {
 
         assets.enqueue("assets/key_green.gif");
         assets.enqueue("assets/Notethumbnail.png");
+        assets.enqueue("assets/door_open.png");
+        assets.enqueue("assets/door_closed.png");
+        assets.enqueue("assets/lights.png");
 
         assets.enqueue("packed_assets/atlas.xml");
         assets.enqueue("packed_assets/textures.png");
