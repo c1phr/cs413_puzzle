@@ -1,4 +1,5 @@
 import Math.sqrt;
+import Math.abs;
 import starling.display.Sprite;
 import starling.utils.AssetManager;
 import starling.display.Image;
@@ -21,6 +22,15 @@ class Game extends Sprite
     public var wallsArray:List<Image>;
     public var key1:Image;
     public var note1:Image;
+    public var door1:Image;
+    public var door2:Image;
+    public var door3:Image;
+    public var door4:Image;
+    public var door5:Image;
+    public var door6:Image;
+    public var door7:Image;
+    public var door8:Image;
+    public var lights:Image;
     
 	public function new(rootSprite)
 	{
@@ -59,22 +69,167 @@ class Game extends Sprite
                 dark.y=0;
                 dark.x=0;
                
+                door1 = new Image(Root.assets.getTexture("door_closed"));
+                addChild(door1);
+                door1.x = 287;
+                door1.y = 283;
+                door1.pivotX = 0;
+                door1.pivotY = door1.texture.height/2;
+
+                door2 = new Image(Root.assets.getTexture("door_closed"));
+                addChild(door2);
+                door2.x = 127;
+                door2.y = 380;
+                door2.pivotX = 0;
+                door2.pivotY = door2.texture.height/2;
+
+
+                door3 = new Image(Root.assets.getTexture("door_closed"));
+                addChild(door3);
+                door3.x = 191;
+                door3.y = 380;
+                door3.pivotX = 0;
+                door3.pivotY = door3.texture.height/2;
+
+
+                door4 = new Image(Root.assets.getTexture("door_closed"));
+                addChild(door4);
+                door4.x = 495;
+                door4.y = 380;
+                door4.pivotX = 0;
+                door4.pivotY = door4.texture.height/2;
+
+
+                door5 = new Image(Root.assets.getTexture("door_closed"));
+                addChild(door5);
+                door5.x = 783;
+                door5.y = 380;
+                door5.pivotX = 0;
+                door5.pivotY = door5.texture.height/2;
+
+
+                door6 = new Image(Root.assets.getTexture("door_closed"));
+                addChild(door6);
+                door6.x = 1071;
+                door6.y = 380;
+                door6.pivotX = 0;
+                door6.pivotY = door6.texture.height/2;
+
+
+                door7 = new Image(Root.assets.getTexture("door_open"));
+                addChild(door7);
+                door7.x = 662;
+                door7.y = 639;
+                door7.pivotX = 0;
+                door7.pivotY = door7.texture.height/2;
+
+
+                door8 = new Image(Root.assets.getTexture("door_open"));
+                addChild(door8);
+                door8.x = 917;
+                door8.y = 639;
+                door8.pivotX = 0;
+                door8.pivotY = door8.texture.height/2;
+
+                lights = new Image(Root.assets.getTexture("lights"));
+                addChild(lights);
+                lights.x = 640;
+                lights.y = 15;
+
                 Starling.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, 
                 	function(event:KeyboardEvent){
                 		
-                		var c:Int = Std.int(sqrt((dot.x * dot.x) + (dot.y * dot.y)));
+                		//var c:Int = Std.int(sqrt((dot.x * dot.x) + (dot.y * dot.y)));
 
-                        var d:Int = Std.int(sqrt((key1.x * key1.x) + (key1.y * key1.y)));
+                        var door1_distance:Int = Std.int(abs(sqrt((dot.x - door1.x)*(dot.x - door1.x) + (dot.y - door1.y)*(dot.y - door1.y))));
+                        //trace(door1_distance);
 
-                        var e:Int = d-c;
-                        var f:Int = c-d;
+                        var door2_distance:Int = Std.int(abs(sqrt((dot.x - door2.x)*(dot.x - door2.x) + (dot.y - door2.y)*(dot.y - door2.y))));
 
-                        if(e < 5 && f > -5){
-                            if(event.keyCode == Keyboard.ENTER){
-                            	key1.visible = false;
-                            }
+                        var door3_distance:Int = Std.int(abs(sqrt((dot.x - door3.x)*(dot.x - door3.x) + (dot.y - door3.y)*(dot.y - door3.y))));
+
+                        var door4_distance:Int = Std.int(abs(sqrt((dot.x - door4.x)*(dot.x - door4.x) + (dot.y - door4.y)*(dot.y - door4.y))));
+
+                        var door5_distance:Int = Std.int(abs(sqrt((dot.x - door5.x)*(dot.x - door5.x) + (dot.y - door5.y)*(dot.y - door5.y))));
+
+                        var door6_distance:Int = Std.int(abs(sqrt((dot.x - door6.x)*(dot.x - door6.x) + (dot.y - door6.y)*(dot.y - door6.y))));
+
+                        var door7_distance:Int = Std.int(abs(sqrt((dot.x - door7.x)*(dot.x - door7.x) + (dot.y - door7.y)*(dot.y - door7.y))));
+
+                        var door8_distance:Int = Std.int(abs(sqrt((dot.x - door8.x)*(dot.x - door8.x) + (dot.y - door8.y)*(dot.y - door8.y))));
+
+                        var key1_distance:Int = Std.int(abs(sqrt((dot.x - key1.x)*(dot.x - key1.x) + (dot.y - key1.y)*(dot.y - key1.y))));
+
+                        var note1_distance:Int = Std.int(abs(sqrt((dot.x - note1.x)*(dot.x - note1.x) + (dot.y - note1.y)*(dot.y - note1.y))));
+
+                        var lights_distance:Int = Std.int(abs(sqrt((dot.x - lights.x)*(dot.x - lights.x) + (dot.y - lights.y)*(dot.y - lights.y))));
+
+                        if(door1_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door1.rotation = -1.75;
+                        	}
+                        }
+
+                        if(door2_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door2.rotation = -1.5;
+                        	}
+                        }
+
+                        if(door3_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door3.rotation = -1.5;
+                        	}
+                        }
+
+                        if(door4_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door4.rotation = -1.5;
+                        	}
+                        }
+
+                        if(door5_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door5.rotation = -1.5;
+                        	}
+                        }
+
+                        if(door6_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door6.rotation = -1.5;
+                        	}
+                        }
+
+                        if(door7_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door7.rotation = -1.5;
+                        	}
+                        }
+
+                        if(door8_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		door8.rotation = -1.5;
+                        	}
+                        }
+
+                        if(key1_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		key1.visible = false;
+                        	}
+                        }
+
+                        if(note1_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		note1.visible = false;
+                        	}
                         }
                 	
+                        if(lights_distance < 50){
+                        	if(event.keyCode == Keyboard.ENTER){
+                        		dark.visible = false;
+                        	}
+                        }
+
                 		if(event.keyCode == Keyboard.LEFT){
                             dot.x -= 10;
                             //dark.x -=10;
@@ -97,6 +252,38 @@ class Game extends Sprite
                                     //dark.x +=10;
                                 }
 
+                            }
+
+                            if(checkCollision(dot, door1)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door2)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door3)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door4)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door5)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door6)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door7)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door8)){
+                            	dot.x += 10;
                             }
                 		}
                 		if(event.keyCode == Keyboard.RIGHT){
@@ -121,9 +308,40 @@ class Game extends Sprite
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
-                                }
-
+                                }	
                                 
+                            }
+
+                            if(checkCollision(dot, door1)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door2)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door3)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door4)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door5)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door6)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door7)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door8)){
+                            	dot.x += 10;
                             }
                 		}
                 		if(event.keyCode == Keyboard.UP){
@@ -147,6 +365,38 @@ class Game extends Sprite
                                     //dark.x +=10;
                                 }
 
+                            }
+
+                            if(checkCollision(dot, door1)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door2)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door3)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door4)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door5)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door6)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door7)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door8)){
+                            	dot.x += 10;
                             }
                             
                 		}
@@ -172,6 +422,39 @@ class Game extends Sprite
                                     //dark.x +=10;
                                 }
                             }
+
+                            if(checkCollision(dot, door1)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door2)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door3)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door4)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door5)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door6)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door7)){
+                            	dot.x += 10;
+                            }
+
+                            if(checkCollision(dot, door8)){
+                            	dot.x += 10;
+                            }
+
                 		}
 
                 		
