@@ -164,51 +164,61 @@ class Game extends Sprite
 
                         var lights_distance:Int = Std.int(abs(sqrt((dot.x - lights.x)*(dot.x - lights.x) + (dot.y - lights.y)*(dot.y - lights.y))));
 
-                        if(door1_distance < 50){
+                        var doorDistance:Int = 100;
+
+                        if(door1_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door1.rotation = -1.75;
+                                destroySprite(door1);
                         	}
                         }
 
-                        if(door2_distance < 50){
+                        if(door2_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door2.rotation = -1.5;
+                                destroySprite(door2);                                
                         	}
                         }
 
-                        if(door3_distance < 50){
+                        if(door3_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door3.rotation = -1.5;
+                                destroySprite(door3);                                
                         	}
                         }
 
-                        if(door4_distance < 50){
+                        if(door4_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door4.rotation = -1.5;
+                                destroySprite(door4);                                
                         	}
                         }
 
-                        if(door5_distance < 50){
+                        if(door5_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door5.rotation = -1.5;
+                                destroySprite(door5);                                
                         	}
                         }
 
-                        if(door6_distance < 50){
+                        if(door6_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door6.rotation = -1.5;
+                                destroySprite(door6);                                
                         	}
                         }
 
-                        if(door7_distance < 50){
+                        if(door7_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door7.rotation = -1.5;
+                                destroySprite(door7);                                
                         	}
                         }
 
-                        if(door8_distance < 50){
+                        if(door8_distance < doorDistance){
                         	if(event.keyCode == Keyboard.ENTER){
                         		door8.rotation = -1.5;
+                                destroySprite(door8);                                
                         	}
                         }
 
@@ -220,7 +230,10 @@ class Game extends Sprite
 
                         if(note1_distance < 50){
                         	if(event.keyCode == Keyboard.ENTER){
-                        		note1.visible = false;
+                                var endGame = new EndGame(false, "note", rootSprite);
+                                rootSprite.addChild(endGame);
+                                this.removeFromParent();
+                                this.dispose();                        		
                         	}
                         }
                 	
@@ -472,6 +485,15 @@ class Game extends Sprite
 
     private function checkCollision(texture1:Image, texture2:Image):Bool {
         return (texture1.bounds.intersects(texture2.bounds));
+    }
+
+    private function destroySprite(sprite:Image)
+    {
+        sprite.x = 10000;
+        sprite.y = 10000;
+        sprite.removeFromParent();        
+        sprite.dispose();
+        sprite = null;
     }
 
     private function addWalls(){

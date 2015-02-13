@@ -18,7 +18,7 @@ import starling.display.Quad;
 class EndGame extends Sprite {		
 	public var rootSprite:Sprite;
 
-	public function new(winState:Bool, rootSprite:Sprite)
+	public function new(winState:Bool, loseType:String, rootSprite:Sprite)
 	{
 		super();
 		this.rootSprite = rootSprite;
@@ -30,21 +30,31 @@ class EndGame extends Sprite {
 		addChild(background);
 
 		var endText:String;
-		if (winState)
+
+		if (loseType == "note")
 		{
-			endText = "You Win!";
+			endText = "You begin to read the note but feel the air grow cold around you, you hear a creak and begin falling...";
 		}
 		else
 		{
-			endText = "You Lose!";
+			endText = "";
 		}
 
-		var endGameTextField:TextField = new TextField(stage.stageWidth, 400, endText, "title_font", 96, Color.WHITE);
+		if (winState)
+		{
+			endText += "\n\nYou Win!";
+		}
+		else
+		{
+			endText += "\n\nYou Lose!";
+		}
+
+		var endGameTextField:TextField = new TextField(stage.stageWidth, 400, endText, "title_font", 72, Color.WHITE);
 		endGameTextField.x = 0;
-		endGameTextField.y = Std.int(stage.stageHeight/2);
+		endGameTextField.y = Std.int(stage.stageHeight/4);
 		addChild(endGameTextField);
 
-		var backButton = new TextField(400, 100, "Back To Menu", "title_font", 72, Color.WHITE);
+		var backButton = new TextField(400, 100, "Main Menu", "title_font", 72, Color.WHITE);
 		backButton.x = Std.int(stage.stageWidth/2) - 200;
 		backButton.y = 600;
 		backButton.border = true;
