@@ -20,16 +20,11 @@ class Root extends Sprite {
 
     public function start(startup:Startup) {
         assets = new AssetManager();
-        assets.enqueue("assets/title_font.fnt");
-
-        assets.enqueue("assets/key_green.gif");
-        assets.enqueue("assets/Notethumbnail.png");
-        assets.enqueue("assets/door_open.png");
-        assets.enqueue("assets/door_closed.png");
-        assets.enqueue("assets/lights.png");
-
+        assets.enqueue("packed_assets/title_font.fnt");
         assets.enqueue("packed_assets/atlas.xml");
         assets.enqueue("packed_assets/textures.png");
+        assets.enqueue("packed_assets/dark.png");
+        assets.enqueue("packed_assets/solid_dark.png");
 		
         assets.enqueue("assets/game_music.mp3");
         assets.enqueue("assets/footstep.mp3");
@@ -40,10 +35,7 @@ class Root extends Sprite {
 		            assets.playSound("game_music");
 
             if (ratio == 1) {
-                startup.removeChild(startup.loadingBitmap);
-	            // var game = new Game(this);
-             //    game.startGame();
-             //    this.addChild(game);
+                startup.removeChild(startup.loadingBitmap);	         
              var menu = new Menu(this);             
              this.addChild(menu);             
             }
