@@ -32,7 +32,7 @@ class Root extends Sprite {
         assets.enqueue("assets/wall1.png");
         assets.enqueue("assets/title_font.png");
         assets.enqueue("assets/title_font.fnt");
-        assets.enqueue("assets/key.png");
+        assets.enqueue("assets/key_green.gif");
         assets.enqueue("assets/Notethumbnail.png");
 		
         assets.loadQueue(function onProgress(ratio:Int) {
