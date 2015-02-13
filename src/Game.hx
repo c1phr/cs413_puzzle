@@ -80,21 +80,26 @@ class Game extends Sprite
                             //dark.x -=10;
                             for(wall in wallsArray)
                             {
-
+                            Root.assets.playSound("footstep");
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
+
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
+
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
 
                             }
@@ -105,22 +110,25 @@ class Game extends Sprite
                             for(wall in wallsArray)
                             {
 
-                            	
+                            	Root.assets.playSound("footstep");
 
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.x -= 10;
                                     //dark.x -=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
 
                                 
@@ -130,21 +138,24 @@ class Game extends Sprite
                             dot.y -= 10;
                             //dark.y -=10;
                             for(wall in wallsArray){
-
+                                Root.assets.playSound("footstep");   
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y += 10;
                                     //dark.y +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
 
                             }
@@ -155,21 +166,24 @@ class Game extends Sprite
                             //dark.y +=10;
                             for(wall in wallsArray)
                             {
-
+                            Root.assets.playSound("footstep");
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y -= 10;
                                     //dark.y -=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
                                     //dark.x +=10;
+                                    Root.assets.playSound("wall_collision");
                                 }
                             }
                 		}
@@ -183,6 +197,7 @@ class Game extends Sprite
                 	dot.addEventListener(TouchEvent.TOUCH, 
                 	function(e:TouchEvent){
                 		var touch = e.getTouch(stage, TouchPhase.BEGAN);
+                        Root.assets.playSound("item_pickup");
                 	}); 
                 
 	}

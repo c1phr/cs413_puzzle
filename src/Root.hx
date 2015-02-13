@@ -28,8 +28,14 @@ class Root extends Sprite {
         assets.enqueue("packed_assets/atlas.xml");
         assets.enqueue("packed_assets/textures.png");
 		
+        assets.enqueue("assets/game_music.mp3");
+        assets.enqueue("assets/footstep.mp3");
+        assets.enqueue("assets/wall_collision.mp3");
+        assets.enqueue("assets/item_pickup.mp3");
+
         assets.loadQueue(function onProgress(ratio:Int) {
-		
+		            assets.playSound("game_music");
+
             if (ratio == 1) {
                 startup.removeChild(startup.loadingBitmap);
 	            // var game = new Game(this);
