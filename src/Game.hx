@@ -129,126 +129,56 @@ class Game extends Sprite
 
     private function addWalls(){
 
-        var eastWall:Image;
-        var westWall:Image;
-        var northWall:Image;
-        var southWall:Image;
-        var wall1:Image;
-        var wall2:Image;
-        var wall3:Image;
-        var wall4:Image;
-        var wall5:Image;
-        var wall6:Image;
-        var wall7:Image;
-        var wall8:Image;
-        var wall9:Image;
-        var wall10:Image;
-        var wall11:Image;
-        var wall12:Image;
-        var wall13:Image;
-        var wall14:Image;
+        var walls:List<InnerWall>;
+        walls = new List<InnerWall>();
+
+        var tempWall = new InnerWall("eastWall", "eastWall", 1264, 0);
+        walls.add(tempWall);
+        tempWall = new InnerWall("westWall", "westWall", 0, 0);
+        walls.add(tempWall);
+        tempWall = new InnerWall("northWall", "northWall", 0, 0);
+        walls.add(tempWall);
+        tempWall = new InnerWall("southWall", "southWall", 0, 704);
+        walls.add(tempWall);
+
+        tempWall = new InnerWall("wall1", "wall1", 336, 16);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall2", "wall2", 16, 272);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall3", "wall3", 16, 368);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall4", "wall4", 176, 368);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall5", "wall5", 240, 368);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall6", "wall6", 544, 368);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall7", "wall6", 832, 368);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall8", "wall8", 1120, 368);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall9", "wall9", 688, 528);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall10", "wall10", 672, 384);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall11", "wall10", 928, 384);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall12", "wall12", 672, 662);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall13", "wall12", 928, 662);
+        walls.add(tempWall);
+        tempWall = new InnerWall("wall14", "wall14", 336, 384);
+        walls.add(tempWall);
 
         wallsArray = new List<Image>();
-        eastWall = new Image(Root.assets.getTexture("eastWall"));
-        addChild(eastWall);
-        eastWall.x = 1264;
-        wallsArray.add(eastWall);
 
-        westWall = new Image(Root.assets.getTexture("westWall"));
-        addChild(westWall);
-        wallsArray.add(westWall);
-
-        northWall = new Image(Root.assets.getTexture("northWall"));
-        addChild(northWall);
-        wallsArray.add(northWall);
-
-        southWall = new Image(Root.assets.getTexture("southWall"));
-        addChild(southWall);
-        southWall.y = 704;
-        wallsArray.add(southWall);
-
-        wall1 = new Image(Root.assets.getTexture("wall1"));
-        addChild(wall1);
-        wall1.x = 336;
-        wall1.y = 16;
-        wallsArray.add(wall1);
-
-        wall2 = new Image(Root.assets.getTexture("wall2"));
-        addChild(wall2);
-        wall2.x = 16;
-        wall2.y = 272;
-        wallsArray.add(wall2);
-
-        wall3 = new Image(Root.assets.getTexture("wall3"));
-        addChild(wall3);
-        wall3.x = 16;
-        wall3.y = 368;
-        wallsArray.add(wall3);
-
-        wall4 = new Image(Root.assets.getTexture("wall4"));
-        addChild(wall4);
-        wall4.x = 176;
-        wall4.y = 368;
-        wallsArray.add(wall4);
-
-        wall5 = new Image(Root.assets.getTexture("wall5"));
-        addChild(wall5);
-        wall5.x = 240;
-        wall5.y = 368;
-        wallsArray.add(wall5);
-
-        wall6 = new Image(Root.assets.getTexture("wall6"));
-        addChild(wall6);
-        wall6.x = 544;
-        wall6.y = 368;
-        wallsArray.add(wall6);
-
-        wall7 = new Image(Root.assets.getTexture("wall6")); //this wall and wall 6 are the same asset
-        addChild(wall7);
-        wall7.x = 832;
-        wall7.y = 368;
-        wallsArray.add(wall7);
-
-        wall8 = new Image(Root.assets.getTexture("wall8"));
-        addChild(wall8);
-        wall8.x = 1120;
-        wall8.y = 368;
-        wallsArray.add(wall8);
-
-        wall9 = new Image(Root.assets.getTexture("wall9"));
-        addChild(wall9);
-        wall9.x = 688;
-        wall9.y = 528;
-        wallsArray.add(wall9);
-
-        wall10 = new Image(Root.assets.getTexture("wall10"));
-        addChild(wall10);
-        wall10.x = 672;
-        wall10.y = 384;
-        wallsArray.add(wall10);
-
-        wall11 = new Image(Root.assets.getTexture("wall10")); // this wall and wall 10 are the same asset
-        addChild(wall11);
-        wall11.x = 928;
-        wall11.y = 384;
-        wallsArray.add(wall11);
-
-        wall12 = new Image(Root.assets.getTexture("wall12"));
-        addChild(wall12);
-        wall12.x = 672;
-        wall12.y = 662;
-        wallsArray.add(wall12);
-
-        wall13 = new Image(Root.assets.getTexture("wall12"));
-        addChild(wall13);
-        wall13.x = 928;
-        wall13.y = 662;
-        wallsArray.add(wall13);
-
-        wall14 = new Image(Root.assets.getTexture("wall14"));
-        addChild(wall14);
-        wall14.x = 336;
-        wall14.y = 384;
-        wallsArray.add(wall14);
+        var tempImage:Image;
+        for(wall in walls) {
+            tempImage = new Image(Root.assets.getTexture(wall.textureName));
+            addChild(tempImage);
+            tempImage.x = wall.x;
+            tempImage.y = wall.y;
+            wallsArray.add(tempImage);
+        }
     }
 }
