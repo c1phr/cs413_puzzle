@@ -256,6 +256,7 @@ class Game extends Sprite
                         		key1.visible = false;
                                 destroySprite(key1);
                                 keysGrabbed++;
+                                Root.assets.playSound("item_pickup");
                         	}
                         }
 
@@ -264,6 +265,7 @@ class Game extends Sprite
                                 key2.visible = false;    
                                 destroySprite(key2);                           
                                 keysGrabbed++;
+                                Root.assets.playSound("item_pickup");
                             }
                         }
 
@@ -272,6 +274,7 @@ class Game extends Sprite
                                 key3.visible = false;
                                 destroySprite(key3);
                                 keysGrabbed++;
+                                Root.assets.playSound("item_pickup");
                             }
                         }
 
@@ -311,36 +314,20 @@ class Game extends Sprite
                             Root.assets.playSound("footstep");
                                 if(checkCollision(dot, wall))
                                 {
-<<<<<<< HEAD
-                                    dot.x += 10;
-                                    //dark.x +=10;
-                                    Root.assets.playSound("wall_collision");
-
-=======
-                                    dot.x += 10;                                    
+                                    Root.assets.playSound("wall_collision");                           
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
-
-=======
                                     moveDarkness(10, 0);                                    
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
 
                             }
@@ -388,38 +375,21 @@ class Game extends Sprite
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.x -= 10;
-<<<<<<< HEAD
-                                    //dark.x -=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(-10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
-<<<<<<< HEAD
-                                    Root.assets.playSound("wall_collision");
-                                }
-
-=======
-=======
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
-                                }	
->>>>>>> b536b88bd21ba1529efed1b282d056d34cbb5273
+                                    Root.assets.playSound("wall_collision");
+                                }                                
                                 
                             }
 
@@ -463,32 +433,20 @@ class Game extends Sprite
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y += 10;
-<<<<<<< HEAD
-                                    //dark.y +=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(0, 10);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
 
                             }
@@ -535,32 +493,20 @@ class Game extends Sprite
                                 if(checkCollision(dot, wall))
                                 {
                                     dot.y -= 10;
-<<<<<<< HEAD
-                                    //dark.y -=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(0, -10);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, key1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                                 if(checkCollision(dot, note1))
                                 {
                                     dot.x += 10;
-<<<<<<< HEAD
-                                    //dark.x +=10;
                                     Root.assets.playSound("wall_collision");
-=======
                                     moveDarkness(10, 0);
->>>>>>> 5bc15130a5491c8807207acb8b50c9aa65203f50
                                 }
                             }
 
@@ -598,13 +544,6 @@ class Game extends Sprite
 
                 		}
                 	});
-                	
-                	dot.addEventListener(TouchEvent.TOUCH, 
-                	function(e:TouchEvent){
-                		var touch = e.getTouch(stage, TouchPhase.BEGAN);
-                        Root.assets.playSound("item_pickup");
-                	}); 
-                
 	}
 
     private function checkCollision(texture1:Image, texture2:Image):Bool {
