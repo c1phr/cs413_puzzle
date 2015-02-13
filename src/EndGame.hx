@@ -38,8 +38,12 @@ class EndGame extends Sprite {
 		else if (loseType == "win")
 		{
 			endText = "The button on the wall begins glowing ominously as you approach, you press it and the walls begin to fall away...\n\n"
-			+
-			"... it was all just a game.";
+			+ "... it was all just a game\n";
+		}
+		else if (loseType == "noKeys")
+		{
+			endText = "The button on the wall is as cold and lifeless as the room around you. You decide to press it, but nothing happens."
+			+ " You start to hear laughing in the distance that saps the energy from your body.\n";
 		}
 		else
 		{
@@ -48,14 +52,14 @@ class EndGame extends Sprite {
 
 		if (winState)
 		{
-			endText += "\n\nYou Win!";
+			endText += "\nYou Win!";
 		}
 		else
 		{
-			endText += "\n\nYou Lose!";
+			endText += "\nYou Lose!";
 		}
 
-		var endGameTextField:TextField = new TextField(stage.stageWidth, 400, endText, "title_font", 72, Color.WHITE);
+		var endGameTextField:TextField = new TextField(stage.stageWidth, 400, endText, "title_font", 50, Color.WHITE);
 		endGameTextField.x = 0;
 		endGameTextField.y = Std.int(stage.stageHeight/4);
 		addChild(endGameTextField);
